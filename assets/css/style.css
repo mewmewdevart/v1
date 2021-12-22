@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Global Settings */
+:root{
+    --header-height: 3rem;
+    --font-medium: 500;
+
+    /* Margins */
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+
+    /*Element order */
+    --z-fixed: 100;
+
+    /* Colors and Fonts */
+    --first-color: rgb(84, 56, 132);
+    --white-color: rgb(255, 255, 255);
+    --dark-color: #392a47;
+    --text-color: #959297;
+    --body-font: 'Roboto', sans-serif;
+    --big-font-size: 4.25rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+}
+@media screen and (min-width: 768px){
+:root{
+    --big-font-size: 7.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    }
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+/* Suave Scroll Effect*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+h1{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* No select txt - StackOverflow*/
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+/* Sections Global */
+.section {
+    padding: 3rem 0;
+}
+
+/* Design */
+.bdGrid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem); /* its working ? maybe 3rem*/
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+.initialHeader {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--first-color);
+}
+
+/* Navbar */
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 768px){
+.navMenu { /*test */
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: rgba(255,255,255,.3);
+    transition: .5s;
+    backdrop-filter: blur(10px);
+    }
+}
+.navItem {
+    margin-bottom: var(--mb-4);
+}
+.navLink{
+    position: relative;
+    color: var(--dark-color);
+}
+.navLink:hover{
+    color: var(--first-color);
+}
+.navLogo{
+    color: var(--white-color);
+}
+.navToggle{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Navbar show - Actions 
+.show{
+    right: 0;
+}
+
+.active::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: .18rem;
+    left: 0;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+*/
+
+/* Home */
+.home {
+    position: relative;
+    background-color: var(--first-color);
+    overflow: hidden;
+}
+.homeContainer {
+    height: calc(100vh - var(--header-height));
+    row-gap: 5rem;
+}
+.homeTitle{
+    align-self: flex-end;
+    font-size: var(--big-font-size);
+    color: var(--white-color);
+    line-height: .8;
+}
+
+.homeScroll{
+    align-self: flex-end;
+    padding-bottom: var(--mb-4);
+}
+.homeScrollLink{
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    color: var(--white-color);
+}
+
+/* MediaQ */
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+    .section{
+        padding-top: 4rem;
+    }
+
+    .nav{
+        height: calc(var(--header-height) + 1rem);
+    }
+    .navList{
+        display: flex;
+    }
+    .navItem{
+        margin-left: var(--mb-4);
+        margin-bottom: 0;
+    }
+    .navToggle{
+        display: none;
+    }
+    .navLink{
+        color: var(--white-color);
+    }
+    .navLink:hover{
+        color: var(--white-color);
+    }
+    .active::after{
+        background-color: var(--white-color);
+    }
+
+    .homeContainer{
+        height: 100vh;
+        grid-template-rows: 1.7fr 1fr;
+        row-gap: 0;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .bdGrid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
