@@ -1,0 +1,20 @@
+Informations:
+
+Strucure of Website
+- 01. Home Page:
+	Apresentation
+- 02. About Me:
+	Professional information, skills and Socials
+- 03. Projects:
+	Recent projects in WebDev and Games (js cards)
+
+(?) Maybe others elements
+
+
+Others elements (Design, Books etc)
+- Colors : 
+- Images : 
+- Icons : 
+- Frameworks :
+
+LINK OF DESIGN ON FIGMA:
