@@ -16,6 +16,7 @@
 
     /* Colors and Fonts */
     --first-color: rgb(84, 56, 132);
+    --second-color: rgb(191, 154, 255);
     --white-color: rgb(255, 255, 255);
     --dark-color: #392a47;
     --text-color: #959297;
@@ -179,6 +180,23 @@ a{
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
     color: var(--white-color);
+}
+
+/* Anim - Color */
+span::before
+{
+    color: var(--second-color);
+    content: '';
+    animation: word-swith 7s infinite;
+}
+
+@keyframes word-swith 
+{
+    0% {content: ' Game Developer '}
+
+    50%{content: ' Web Developer FrontEnd ';}
+
+    100%{content: ' Designer ';}
 }
 
 /* MediaQ */
